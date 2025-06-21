@@ -25,6 +25,7 @@
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
+      color: #660b3c;
     }
     header p {
       font-size: 1.2rem;
@@ -38,7 +39,7 @@
       gap: 2rem;
     }
     .section img {
-      width: 150px;
+      width: 200px;
       height: auto;
       border-radius: 12px;
       align-self: flex-start;
@@ -49,6 +50,7 @@
     .section h2 {
       font-size: 2rem;
       margin-bottom: 1rem;
+      color: #aa236b;
     }
     .cta {
       background: #f8c8dc;
@@ -82,21 +84,42 @@
       .section.reverse {
       flex-direction: row-reverse;
     }
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 600px) {
+      .tagline {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1 style="font-family: 'Playfair Display', serif;">Prana Yoga with Pari</h1>
-    <h1 style="font-family: 'Great Vibes', cursive;">Prana Yoga with Pari</h1>
+    <img src="images/logo.png" alt="Prana Yoga Logo" style="width: 120px; height: auto; display: block; margin: 0 auto 1rem; margin-bottom: 0;">
+    <h1 style="font-family: 'Playfair Display', serif; margin-top: 0;">Prana Yoga with Pari</h1>
+    <!-- <h1 style="font-family: 'Great Vibes', cursive;">Prana Yoga with Pari</h1>
     <h1 style="font-family: 'Sacramento', cursive;">Prana Yoga with Pari</h1>
     <h1 style="font-family: 'Dancing Script', cursive;">Prana Yoga with Pari</h1>
     <h1 style="font-family: 'Lora', serif;">Prana Yoga with Pari</h1>
-    <h1 style="font-family: 'Italianno', cursive;">Prana Yoga with Pari</h1>
-    <p style="font-size: 1.2rem; margin-top: 1rem;">🌿 Find your balance &nbsp;&nbsp; 💪 Strengthen your body &nbsp;&nbsp; 🧘 Calm your mind</p>
+    <h1 style="font-family: 'Italianno', cursive;">Prana Yoga with Pari</h1> -->
+    <div class="tagline">
+      <span>🌿 Find your balance</span>
+      <span>💪 Strengthen your body</span>
+      <span>🧘 Calm your mind</span>
+    </div>
   </header>
 
   <section class="section">
-    <img src="https://tse3.mm.bing.net/th?id=OIP.iqYWRlnz9mI-YqswQAsKGwHaHa&pid=Api" alt="Yoga avatar about me">
+    <img src="images/image_4.jpg" alt="Yoga avatar about me">
     <div class="section-content">
       <h2>About Me</h2>
       <p>Hi, I’m Pari, a certified yoga instructor passionate about helping others find peace and strength through yoga. Whether you're new or experienced, my classes are designed to support your journey. With a background in Hatha and Vinyasa, I emphasize mindful movement and breath awareness to help each individual grow at their own pace.</p>
@@ -104,18 +127,19 @@
   </section>
 
   <section class="section reverse">
-    <img src="https://tse1.mm.bing.net/th?id=OIP.A2Mb_jUBm7PbXve8WVp1fgHaHa&pid=Api" alt="Meditation avatar" style="width: 100px; height: auto; border-radius: 12px; align-self: flex-start;">
+    <img src="images/image_1.jpg" alt="Meditation avatar">
         <div class="section-content">
       <h2>Class Schedule</h2>
       <ul>
         <li>Monday to Friday – 7:00 AM to 8:00 AM (Morning Flow) (Virtual)</li>
         <li>Monday to Friday – 7:00 PM to 8:00 PM (Evening Rejuvenation) (Virtual)</li>
+        <li>Saturday to Sunday – 7:00 AM to 8:00 AM & 8:00 AM to 9:00 AM (Weekend Relaxation) (Virtual)</li>
       </ul>
     </div>
   </section>
 
   <section class="section">
-    <img src="https://tse2.mm.bing.net/th?id=OIP.XynObNnLzGhtHDI9g8eRIQHaHa&pid=Api" alt="Yoga avatar benefits">
+    <img src="images/image_2.jpg" alt="Yoga avatar benefits">
     <div class="section-content">
       <h2>Why Join My Classes?</h2>
       <ul>
@@ -127,18 +151,18 @@
   </section>
 
   <section class="section reverse">
-    <img src="https://tse1.mm.bing.net/th?id=OIP._DQGu9AOEG5kq_5_UVu8zwHaHa&pid=Api" alt="Yoga avatar certification">
+    <img src="images/image_3.jpg" alt="Yoga avatar certification">
     <div class="section-content">
       <h2>Credentials & Certifications</h2>
       <ul>
         <li>200-Hour Yoga Teacher Training Certification - YogaReview</li>
         <li>Advanced Hatha & Vinyasa Flow Training</li>
-                <li>7+ years of personal yoga practice</li>
+        <li>7+ years of personal yoga practice</li>
       </ul>
     </div>
   </section>
 
-  <section class="section">
+  <!-- <section class="section">
     <div class="section-content">
       <h2>Pricing</h2>
       <ul>
@@ -149,7 +173,7 @@
         <li><strong>Private 1-on-1 Session:</strong> $80/hour</li>
       </ul>
     </div>
-  </section>
+  </section> -->
 
   <section class="cta">
     <h2>Start Your Yoga Journey Today</h2>
