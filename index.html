@@ -109,20 +109,21 @@
       }
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("L-FRHb834Fa8LK434"); // Replace with your EmailJS User ID
+    })();
+  </script>
 </head>
 <body>
   <header>
     <img src="images/logo.png" alt="Prana Yoga Logo" style="width: 120px; height: auto; display: block; margin: 0 auto 1rem; margin-bottom: 0;">
     <h1 style="font-family: 'Playfair Display', serif; margin-top: 0;">Prana Yoga with Pari</h1>
-    <!-- <h1 style="font-family: 'Great Vibes', cursive;">Prana Yoga with Pari</h1>
-    <h1 style="font-family: 'Sacramento', cursive;">Prana Yoga with Pari</h1>
-    <h1 style="font-family: 'Dancing Script', cursive;">Prana Yoga with Pari</h1>
-    <h1 style="font-family: 'Lora', serif;">Prana Yoga with Pari</h1>
-    <h1 style="font-family: 'Italianno', cursive;">Prana Yoga with Pari</h1> -->
     <div class="tagline">
       <span>🌿 Find your balance</span>
       <span>💪 Strengthen your body</span>
-      <span>🧘 Calm your mind</span>
+      <span>🧘‍♀️ Calm your mind</span>
     </div>
   </header>
 
@@ -163,38 +164,53 @@
     <div class="section-content">
       <h2>Credentials & Certifications</h2>
       <ul>
-        <li>200-Hour Yoga Teacher Training Certification - YogaReview</li>
+        <li>200-Hour Yoga Teacher Training Certification (RYT 200 - Yoga Alliance)</li>
         <li>Advanced Hatha & Vinyasa Flow Training</li>
         <li>7+ years of personal yoga practice</li>
       </ul>
     </div>
   </section>
 
-  <!-- <section class="section">
-    <div class="section-content">
-      <h2>Pricing</h2>
-      <ul>
-        <li><strong>Drop-In Class:</strong> $20 per session</li>
-        <li><strong>Weekly Unlimited Pass:</strong> $60/week (up to 10 sessions)</li>
-        <li><strong>Monthly Unlimited Membership:</strong> $180/month</li>
-        <li><strong>10-Class Pack:</strong> $170 (valid for 2 months)</li>
-        <li><strong>Private 1-on-1 Session:</strong> $80/hour</li>
-      </ul>
-    </div>
-  </section> -->
-
   <section class="cta">
     <h2>Start Your Yoga Journey Today</h2>
     <p>Sign up now to book your spot in the upcoming class!</p>
-    <button>Join Now</button>
+    <button onclick="document.getElementById('modal').style.display='block'">Join Now</button>
   </section>
 
   <footer>
     &copy; 2025 Prana Yoga with Pari. All rights reserved.
     <br />
-    <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="social-icon">
+    <a href="https://instagram.com/pranayogawith_pari" target="_blank" rel="noopener noreferrer" class="social-icon">
       <i class="fab fa-instagram"></i>
     </a>
   </footer>
+
+  <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.6); z-index:1000;">
+    <div style="background:#fff; margin:10% auto; padding:2rem; border-radius:8px; width:90%; max-width:400px; position:relative;">
+      <button onclick="document.getElementById('modal').style.display='none'" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.2rem; cursor:pointer;">&times;</button>
+      <h3 style="text-align:center;">Book a Class</h3>
+  <p style="text-align:center; font-size:0.9rem; color:#555; margin-bottom:1rem;">We’ll reach out to you shortly after you submit this form.</p>
+      <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required style="width:100%; margin-bottom:1rem; padding:0.5rem;">
+        <input type="tel" name="phone" placeholder="Phone Number" required style="width:100%; margin-bottom:1rem; padding:0.5rem;">
+        <input type="email" name="email" placeholder="Email Address" required style="width:100%; margin-bottom:1rem; padding:0.5rem;">
+        <textarea name="message" placeholder="Your Message" rows="4" required style="width:100%; margin-bottom:1rem; padding:0.5rem;"></textarea>
+        <button type="submit" style="background:#d48abf; color:white; border:none; padding:0.75rem 1.5rem; border-radius:6px; cursor:pointer; width:100%;">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      emailjs.sendForm('service_vdspcsy', 'template_e7s055x', this)
+        .then(function() {
+          alert('Message sent successfully!');
+          document.getElementById('modal').style.display = 'none';
+        }, function(error) {
+          alert('Failed to send message: ' + JSON.stringify(error));
+        });
+    });
+  </script>
 </body>
 </html>
