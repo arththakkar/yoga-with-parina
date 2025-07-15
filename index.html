@@ -201,10 +201,8 @@
       event.preventDefault();
       emailjs.sendForm('service_vdspcsy', 'template_e7s055x', this)
         .then(function() {
-          alert('Message sent successfully!');
           document.getElementById('modal').style.display = 'none';
         }, function(error) {
-          alert('Failed to send message: ' + JSON.stringify(error));
         });
     });
   </script>
